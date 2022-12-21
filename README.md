@@ -8,7 +8,7 @@ Orchestrate an ETL where we schedule the following tasks:
 - Sending an email to expose the success of the ETL
 
 
-###Initialise all the instances
+### Initialise all the instances
 ``` bash
 ./start.sh
 ```

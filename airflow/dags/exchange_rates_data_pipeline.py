@@ -96,7 +96,7 @@ with DAG("exchange_rates_data_pipeline", start_date=datetime(2022, 1, 1), schedu
 
     send_email_notification = EmailOperator(
         task_id="send_email_notification",
-        to="david94zgz@gmail.com",
+        to="you_email",
         subject="exchange_rate_data_pipeline",
         html_content=f"""
         <h2>exchange_rate_data_pipeline</h2>

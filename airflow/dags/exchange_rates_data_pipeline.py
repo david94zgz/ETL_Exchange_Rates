@@ -28,7 +28,7 @@ def download_exchange_rates():
       "BRL": "symbols=EUR,AUD,USD,CAD,COP,DKK,EGP&base=BRL"
   }
   headers= {
-    "apikey": "AM3wTPsh2jwTYogUx27tIeMb6k0wGMsu"
+    "apikey": "your_API_key"
   }
   for i in range(len(END_POINTS)):
       base = list(END_POINTS)[i]
@@ -45,7 +45,7 @@ with DAG("exchange_rates_data_pipeline", start_date=datetime(2022, 1, 1), schedu
     is_exchange_rates_available = HttpSensor(
         task_id="is_exchange_rates_available",
         http_conn_id="exchange_rates_api",
-        headers={"apikey": "AM3wTPsh2jwTYogUx27tIeMb6k0wGMsu"},
+        headers={"apikey": "your_API_key"},
         endpoint="exchangerates_data/latest",
         response_check=lambda response: "rates" in response.text,
         poke_interval=5,
